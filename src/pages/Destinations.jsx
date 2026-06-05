@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../services/api";
 import DestinationCard from "../components/DestinationCard";
-
+import { Link } from "react-router-dom";
 function Destinations() {
  const [destinations, setDestinations] =
    useState([]);
@@ -21,16 +21,35 @@ function Destinations() {
      console.log(error);
    }
  }
+async function deleteDestination(id) {
+
+ await api.delete(
+   `/destinations/${id}`
+ );
+
+ setDestinations(
+   destinations.filter(
+     destination =>
+     destination.id !== id
+   )
+ );
+}
 
  return (
    <>
+
      <h1>Popular Destinations</h1>
+   <Link to="/add-destination" className='submit-btn'>
+ Add Destination
+</Link>
 
      <div className="destinations">
        {destinations.map((destination) => (
          <DestinationCard
            key={destination.id}
            destination={destination}
+           onDelete={deleteDestination}
+
          />
        ))}
      </div>

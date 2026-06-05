@@ -72,7 +72,7 @@ function DestinationDetails() {
      <h3>Top Attractions</h3>
 
      <ul>
-       {destination.attractions.map(
+       {destination.attractions && destination.attractions.map(
          (place, index) => (
            <li key={index}>{place}</li>
          )

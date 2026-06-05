@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function DestinationCard({ destination }) {
+function DestinationCard({ destination ,onDelete}) {
  return (
    <div className="card">
      <img
@@ -15,12 +15,30 @@ function DestinationCard({ destination }) {
      <p>{destination.category}</p>
 
      <p>⭐ {destination.rating}</p>
+<div className="card-actions">
+ <Link
+   className="view-btn"
+   to={`/destinations/${destination.id}`}
+ >
+   View
+ </Link>
 
-     <Link
-       to={`/destinations/${destination.id}`}
-     >
-       View Details
-     </Link>
+ <Link
+   className="edit-btn"
+   to={`/edit-destination/${destination.id}`}
+ >
+   Edit
+ </Link>
+
+ <button
+   className="delete-btn"
+   onClick={() => onDelete(destination.id)}
+ >
+   Delete
+ </button>
+</div>
+
+
    </div>
  );
 }
