@@ -5,7 +5,8 @@ import Home from "../pages/Home";
 import Destinations from "../pages/Destinations";
 import DestinationDetails from "../pages/DestinationDetails";
 import EditDestination from "../pages/EditDestination";
-
+import Register from "../pages/Register";
+import Login from "../pages/Login";
 function AppRoutes() {
  return (
    <Routes>
@@ -31,6 +32,17 @@ function AppRoutes() {
  path="/edit-destination/:id"
  element={<EditDestination />}
 />
+<Route
+  path="/register"
+  element={<Register />}
+/>
+
+<Route
+  path="/login"
+  element={<Login />}
+/>
+
+
 
 
    </Routes>
