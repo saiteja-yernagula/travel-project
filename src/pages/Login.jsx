@@ -38,6 +38,10 @@ function Login() {
   }
 
   return (
+    <div className='auth-container'>
+        <div className='auth-card'>
+
+
     <form onSubmit={handleSubmit}>
 
       <input
@@ -56,11 +60,13 @@ function Login() {
         }
       />
 
-      <button>
+      <button className='auth-btn'>
         Login
       </button>
 
     </form>
+            </div>
+    </div>
   );
 }
 

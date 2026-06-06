@@ -28,6 +28,8 @@ function Register() {
   }
 
   return (
+     <div className='auth-container'>
+        <div className='auth-card'>
     <form onSubmit={handleSubmit}>
 
       <input
@@ -51,11 +53,12 @@ function Register() {
         onChange={handleChange}
       />
 
-      <button>
+      <button className="auth-btn">
         Register
       </button>
 
     </form>
+    </div></div>
   );
 }
 

@@ -25,6 +25,11 @@ function Navbar() {
             Login
           </Link>
         </>)}
+    {user && (
+        <Link to="/logout">
+          Logout
+        </Link>
+      )}
 
 
    </nav>

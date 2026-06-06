@@ -7,6 +7,8 @@ import DestinationDetails from "../pages/DestinationDetails";
 import EditDestination from "../pages/EditDestination";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
+import Logout from "../pages/Logout";
+import ProtectedRoute from "./ProtectedRoute";
 function AppRoutes() {
  return (
    <Routes>
@@ -26,7 +28,12 @@ function AppRoutes() {
      />
      <Route
  path="/add-destination"
- element={<AddDestination />}
+ element={
+    <ProtectedRoute>
+      <AddDestination />
+    </ProtectedRoute>
+  }
+
 />
 <Route
  path="/edit-destination/:id"
@@ -41,6 +48,12 @@ function AppRoutes() {
   path="/login"
   element={<Login />}
 />
+
+<Route
+  path="/logout"
+  element={<Logout />}
+/>
+
 
 
 
