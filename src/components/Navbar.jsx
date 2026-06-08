@@ -31,7 +31,9 @@ function Navbar() {
         </Link>
       )}
 
-
+   <Link to="/favorites">
+          favorites
+        </Link>
    </nav>
  );
 }

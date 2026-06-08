@@ -1,46 +1,54 @@
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
-function DestinationCard({ destination ,onDelete}) {
- return (
-   <div className="card">
-     <img
-       src={destination.image}
-       alt={destination.name}
-     />
+import { addFavorite } from "../features/favoriteSlice";
 
-     <h3>{destination.name}</h3>
+function DestinationCard({ destination, onDelete }) {
+    const dispatch = useDispatch();
 
-     <p>{destination.country}</p>
+  function handleFavorite() {
 
-     <p>{destination.category}</p>
+    dispatch(
+      addFavorite(destination)
+    );
 
-     <p>⭐ {destination.rating}</p>
-<div className="card-actions">
- <Link
-   className="view-btn"
-   to={`/destinations/${destination.id}`}
- >
-   View
- </Link>
+  }
 
- <Link
-   className="edit-btn"
-   to={`/edit-destination/${destination.id}`}
- >
-   Edit
- </Link>
+  return (
+    <div className="card">
+      <img src={destination.image} alt={destination.name} />
 
- <button
-   className="delete-btn"
-   onClick={() => onDelete(destination.id)}
- >
-   Delete
- </button>
-</div>
+      <h3>{destination.name}</h3>
+
+      <p>{destination.country}</p>
+
+      <p>{destination.category}</p>
+
+      <p>⭐ {destination.rating}</p>
+      <div className="card-actions">
+        <Link className="view-btn" to={`/destinations/${destination.id}`}>
+          View
+        </Link>
+
+        <Link className="edit-btn" to={`/edit-destination/${destination.id}`}>
+          Edit
+        </Link>
 
 
-   </div>
- );
+
+
+        <button className="delete-btn" onClick={() => onDelete(destination.id)}>
+          Delete
+        </button>
+      </div>
+            <button
+        className="favorite-btn"
+        onClick={handleFavorite}
+      >
+        ❤ Add To Favorites
+      </button>
+    </div>
+  );
 }
 
 export default DestinationCard;

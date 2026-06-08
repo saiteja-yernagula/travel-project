@@ -9,6 +9,7 @@ import Register from "../pages/Register";
 import Login from "../pages/Login";
 import Logout from "../pages/Logout";
 import ProtectedRoute from "./ProtectedRoute";
+import Favorites from "../pages/Favorites";
 function AppRoutes() {
  return (
    <Routes>
@@ -53,6 +54,7 @@ function AppRoutes() {
   path="/logout"
   element={<Logout />}
 />
+<Route path='/favorites' element={<Favorites/>}/>
 
 
 
