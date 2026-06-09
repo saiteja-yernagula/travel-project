@@ -3,7 +3,12 @@ import { createSlice } from "@reduxjs/toolkit";
 const favoriteSlice = createSlice({
   name: "favorites",
 
-  initialState: [],
+  initialState:  JSON.parse(
+    localStorage.getItem(
+      "favorites"
+    )
+  ) || []
+,
 
   reducers: {
 
@@ -16,18 +21,32 @@ const favoriteSlice = createSlice({
 
       if (!exists) {
         state.push(action.payload);
+         localStorage.setItem(
+    "favorites",
+    JSON.stringify(state)
+  );
+
       }
 
     },
 
-    removeFavorite: (state, action) => {
+    removeFavorite:(state,action)=>{
 
-      return state.filter(
-        destination =>
-          destination.id !== action.payload
-      );
+ const updated =
+   state.filter(
+     destination =>
+     destination.id !==
+     action.payload
+   );
 
-    }
+ localStorage.setItem(
+   "favorites",
+   JSON.stringify(updated)
+ );
+
+ return updated;
+}
+
 
   }
 });
