@@ -250,93 +250,85 @@ nav a:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(37, 99, 235, 0.25);
 }
+
+
 /* AUTH PAGES */
 
 .auth-container{
- min-height:70vh;
- display:flex;
- justify-content:center;
- align-items:center;
+  min-height:70vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
 .auth-card{
- width:100%;
- max-width:450px;
- background:white;
- padding:40px;
- border-radius:20px;
- box-shadow:0 10px 30px rgba(0,0,0,.08);
+  width:100%;
+  max-width:450px;
+  background:white;
+  padding:40px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
 .auth-card h1{
- text-align:center;
- margin-bottom:25px;
- color:#0f172a;
+  text-align:center;
+  margin-bottom:25px;
+  color:#0f172a;
 }
 
 .auth-card input{
- width:100%;
- padding:14px;
- margin-bottom:18px;
- border:2px solid #e2e8f0;
- border-radius:10px;
- font-size:16px;
- outline:none;
- transition:.3s;
+  width:100%;
+  padding:14px;
+  margin-bottom:18px;
+  border:2px solid #e2e8f0;
+  border-radius:10px;
+  font-size:16px;
+  outline:none;
+  transition:.3s;
 }
 
 .auth-card input:focus{
- border-color:#2563eb;
- box-shadow:0 0 12px rgba(37,99,235,.15);
+  border-color:#2563eb;
+  box-shadow:0 0 12px rgba(37,99,235,.15);
 }
 
 .auth-btn{
- width:100%;
- padding:14px;
- border:none;
- border-radius:10px;
- background:linear-gradient(
-   135deg,
-   #2563eb,
-   #06b6d4
- );
- color:white;
- font-size:16px;
- font-weight:bold;
- cursor:pointer;
- transition:.3s;
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:10px;
+  background:linear-gradient(
+    135deg,
+    #2563eb,
+    #06b6d4
+  );
+  color:white;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:.3s;
 }
 
 .auth-btn:hover{
- transform:translateY(-3px);
- box-shadow:0 10px 20px rgba(37,99,235,.25);
+  transform:translateY(-3px);
+  box-shadow:0 10px 20px rgba(37,99,235,.25);
 }
 
 .auth-card p{
- text-align:center;
- margin-top:15px;
- color:#64748b;
+  text-align:center;
+  margin-top:15px;
+  color:#64748b;
 }
 
 .auth-card p a{
- color:#2563eb;
- font-weight:bold;
+  color:#2563eb;
+  font-weight:bold;
 }
 
 
-.favorite-btn {
-  width: 100%;
-  padding: 12px;
-  background: #ff6b35;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
 
-.favorite-btn:hover {
-  background: #e85d2a;
-}
+
+/* fav */
 .favorites-container {
   padding: 40px;
   min-height: 80vh;
@@ -405,6 +397,21 @@ nav a:hover {
   margin-top: 80px;
 }
 
+.favorite-btn {
+  width: 100%;
+  padding: 12px;
+  background: #ff6b35;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.favorite-btn:hover {
+  background: #e85d2a;
+}
+
+
 .filters{
   display:flex;
   gap:15px;
@@ -425,4 +432,158 @@ nav a:hover {
 .filters input:focus,
 .filters select:focus{
   border-color:#0d6efd;
+}
+
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 992px) {
+
+  main {
+    width: 95%;
+  }
+
+  nav {
+    padding: 15px 20px;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .details img {
+    height: 350px;
+  }
+
+  .form-container {
+    padding: 25px;
+  }
+
+  .favorites-container {
+    padding: 20px;
+  }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  h1 {
+    font-size: 28px;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 15px;
+  }
+
+  .add-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .destinations {
+    grid-template-columns: 1fr;
+  }
+
+  .favorites-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-actions {
+    flex-direction: column;
+  }
+
+  .details {
+    padding: 20px;
+  }
+
+  .details img {
+    height: 250px;
+  }
+
+  .form-container {
+    padding: 20px;
+  }
+
+  .auth-card {
+    padding: 25px;
+  }
+
+  .filters {
+    flex-direction: column;
+  }
+
+  .filters input,
+  .filters select {
+    width: 100%;
+    min-width: unset;
+  }
+
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  main {
+    width: 95%;
+    margin: 20px auto;
+  }
+
+  nav {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .card h3 {
+    font-size: 18px;
+  }
+
+  .card p {
+    font-size: 14px;
+  }
+
+  .details {
+    padding: 15px;
+  }
+
+  .details img {
+    height: 200px;
+  }
+
+  .details h1 {
+    font-size: 24px;
+  }
+
+  .form-container {
+    padding: 15px;
+  }
+
+  .auth-card {
+    padding: 20px;
+  }
+
+  .favorite-content {
+    padding: 15px;
+  }
+
+  .favorite-content h2 {
+    font-size: 20px;
+  }
+
 }
